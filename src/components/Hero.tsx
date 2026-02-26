@@ -18,7 +18,7 @@ export default function Hero({ onWatchDemo }: HeroProps) {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-white to-gray-50">
+    <section className="relative min-h-[50vh] flex items-center justify-center overflow-hidden bg-gradient-to-b from-white to-gray-50">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-30">
         <div className="absolute inset-0" style={{
@@ -32,7 +32,7 @@ export default function Hero({ onWatchDemo }: HeroProps) {
       <div className="absolute top-1/4 -right-32 w-96 h-96 bg-indigo-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000" />
       <div className="absolute -bottom-32 left-1/2 w-96 h-96 bg-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-4000" />
 
-      <div className="relative z-10 max-w-5xl mx-auto px-6 py-32 text-center">
+      <div className="relative z-10 max-w-5xl mx-auto px-6 py-16 text-center">
         {/* Badge */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -82,7 +82,7 @@ export default function Hero({ onWatchDemo }: HeroProps) {
         >
           <button
             onClick={scrollToVideo}
-            className="inline-flex items-center gap-3 px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white text-lg font-semibold rounded-full transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
+            className="inline-flex items-center gap-3 px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white text-lg font-semibold rounded-full transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5 cursor-pointer"
           >
             <Play className="w-5 h-5 fill-current" />
             Watch the 2-Minute Vision Demo
@@ -96,9 +96,10 @@ export default function Hero({ onWatchDemo }: HeroProps) {
             <ArrowDown className="w-4 h-4" />
           </a>
         </motion.div>
+      </div>
 
-        {/* Trust Indicators */}
-        <motion.div
+        {/* TODO: Re-enable when we have customers */}
+        {/* <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
@@ -110,8 +111,7 @@ export default function Hero({ onWatchDemo }: HeroProps) {
             <div className="text-2xl font-bold text-gray-400">District B</div>
             <div className="text-2xl font-bold text-gray-400">District C</div>
           </div>
-        </motion.div>
-      </div>
+        </motion.div> */}
 
       {/* Scroll Indicator */}
       <motion.div

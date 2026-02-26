@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import VideoPlayer from '@/components/VideoPlayer';
 import LeadForm from '@/components/LeadForm';
@@ -22,16 +23,17 @@ export default function Home() {
 
   return (
     <main>
+      <Navbar />
       <Hero />
       
       {/* Video Section */}
-      <section id="video-section" className="py-24 bg-gray-50">
+      <section id="video-section" className="py-12 bg-gray-50">
         <div className="max-w-5xl mx-auto px-6 text-center">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">
             Watch the Vision Demo
           </h2>
           <p className="text-gray-600 mb-8">
-            See how teachtracker.com transforms special education workflows.
+            See how teachtracker transforms special education workflows.
           </p>
           <VideoPlayer />
         </div>
@@ -92,7 +94,7 @@ export default function Home() {
                 ))}
               </div>
               <blockquote className="text-gray-600 mb-4">
-                "teachtracker.com has transformed how we handle compliance. What used to take hours now takes minutes, and we have complete confidence in our documentation."
+                "teachtracker has transformed how we handle compliance. What used to take hours now takes minutes, and we have complete confidence in our documentation."
               </blockquote>
               <cite className="text-sm font-medium text-gray-900">
                 — Sarah Johnson, Special Ed Director
@@ -162,7 +164,7 @@ export default function Home() {
       {/* Footer */}
       <footer className="py-12 bg-gray-50 border-t border-gray-200">
         <div className="max-w-5xl mx-auto px-6 text-center text-gray-500">
-          <p>&copy; 2026 teachtracker.com. All rights reserved.</p>
+          <p>&copy; 2026 teachtracker. All rights reserved.</p>
         </div>
       </footer>
     </main>
