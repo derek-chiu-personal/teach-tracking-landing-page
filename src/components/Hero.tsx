@@ -1,22 +1,9 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Play, ArrowDown } from 'lucide-react';
+import { ArrowDown } from 'lucide-react';
 
-interface HeroProps {
-  onWatchDemo?: () => void;
-}
-
-export default function Hero({ onWatchDemo }: HeroProps) {
-  const scrollToSystemOverview = () => {
-    const section = document.getElementById('system-overview');
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
-    } else if (onWatchDemo) {
-      onWatchDemo();
-    }
-  };
-
+export default function Hero() {
   return (
     <section className="relative min-h-[50vh] flex items-center justify-center overflow-hidden bg-gradient-to-b from-white to-gray-50">
       {/* Background Pattern */}
@@ -73,29 +60,6 @@ export default function Hero({ onWatchDemo }: HeroProps) {
           with clarity and confidence.
         </motion.blockquote>
 
-        {/* CTA Button */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4"
-        >
-          <button
-            onClick={scrollToSystemOverview}
-            className="inline-flex items-center gap-3 px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white text-lg font-semibold rounded-full transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5 cursor-pointer"
-          >
-            <Play className="w-5 h-5 fill-current" />
-            See How It Works
-          </button>
-
-          <a
-            href="#features"
-            className="inline-flex items-center gap-2 px-6 py-4 text-gray-600 hover:text-gray-900 text-lg font-medium transition-colors"
-          >
-            Learn More
-            <ArrowDown className="w-4 h-4" />
-          </a>
-        </motion.div>
       </div>
 
         {/* TODO: Re-enable when we have customers */}

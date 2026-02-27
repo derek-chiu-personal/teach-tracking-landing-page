@@ -8,26 +8,18 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
-    { name: 'How It Works', href: '#system-overview' },
+    { name: 'How It Works', href: '/how-it-works' },
     { name: 'Demo', href: `https://app.${typeof window !== 'undefined' ? window.location.hostname : 'teachtracker.com'}` },
-    { name: 'Features', href: '#features' },
-    { name: 'Testimonials', href: '#testimonials' },
+    { name: 'Features', href: '/#features' },
+    { name: 'Testimonials', href: '/#testimonials' },
   ];
-
-  const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-    setIsOpen(false);
-  };
 
   return (
     <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
       <div className="max-w-5xl mx-auto px-6">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <a href="#" className="text-xl font-bold text-gray-900">
+          <a href="/" className="text-xl font-bold text-gray-900">
             teachtracker
           </a>
 
@@ -42,13 +34,13 @@ export default function Navbar() {
                 {link.name}
               </a>
             ))}
-            <button
-              onClick={() => scrollToSection('#book-demo')}
+            <a
+              href="/#book-demo"
               className="inline-flex items-center gap-2 px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-full transition-colors"
             >
               Get a Demo
               <ArrowRight className="w-4 h-4" />
-            </button>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -76,13 +68,13 @@ export default function Navbar() {
                 {link.name}
               </a>
             ))}
-            <button
-              onClick={() => scrollToSection('#book-demo')}
+            <a
+              href="/#book-demo"
               className="mt-4 w-full inline-flex items-center justify-center gap-2 px-5 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-full"
             >
               Get a Demo
               <ArrowRight className="w-4 h-4" />
-            </button>
+            </a>
           </motion.div>
         )}
       </div>

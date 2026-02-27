@@ -1,7 +1,7 @@
 # System Overview User Story: How TeachTracker Works in Practice
 
 **Project:** IEP Manager Lead Intelligence  
-**Note:** The Proof section is the System Overview only. The demo video is removed. Remove the `VideoPlayer` component and do not include any video module on the landing page.
+**Note:** The Proof section is the System Overview only. The demo video is removed. Remove the `VideoPlayer` component and do not include any video module on the landing page. The full System Overview lives on a dedicated deep-dive page (separate route); the main landing page should only show a slim teaser and a clear link/CTA into this page.
 
 ---
 
@@ -13,7 +13,7 @@
 
 ---
 
-## Flow Pattern: How TeachTracker Works in Practice
+## Flow Pattern: How TeachTracker Works in Practice (Slide-Based Page)
 
 The section must be presented as a **sequential flow** on the landing page (visible sequence, clear progression), not as unrelated blocks.
 
@@ -40,17 +40,25 @@ flowchart LR
 ### Presentation Requirements (Scroll-Native, Mobile-First)
 
 - The UI must present this content as a **flow** (visible sequence and progression), not separate blocks.
-- The section must be **scroll-native** on mobile.
+- The System Overview should be implemented as a **slide-like deep-dive page** (one stage per “slide” on desktop), separate from the primary landing page.
+- On desktop, users should move through stages with a clear stepper or next/previous controls (slide progression).
+- On mobile, the experience must remain **scroll-native** (slides stack vertically while preserving order).
 - Each stage must have a **short summary** plus optional **details**.
 - On mobile, details should be **collapsed by default** (accordion pattern).
-- Users must be able to **jump to a stage** from a stage strip (horizontal chips).
-- The current stage should be **visually indicated** during scroll.
+- Users must be able to **jump to a stage** from a stage strip (horizontal chips or similar).
+- The current stage should be **visually indicated** during scroll or slide progression.
+- The global header (logo + nav) must always allow users to return to the main landing page from any route.
+- From the deep-dive page, clicking **Features**, **Testimonials**, or **Get a Demo** should navigate to the main landing page and land on the corresponding section.
+- The Hero section on the main landing page must not include extra \"How it works\" or \"Learn more\" buttons that duplicate the dedicated \"See the full walkthrough\" CTA in the teaser section.
 
 ### Acceptance Criteria
 
 - No demo video exists on the landing page.
 - The `VideoPlayer` component is removed and unused.
 - The System Overview is the primary Proof section.
+- The System Overview deep-dive resides on its own page/route; the main landing page only shows a concise teaser plus a link/CTA to that page.
+- The logo in the global header links to the main landing page (`/`) from any route.
+- Header links for Features, Testimonials, and Book Demo always work from any page (they can trigger a full-page navigation back to `/` anchors).
 - Mobile UX: stage summaries are readable without fatigue.
 - Mobile UX: stage details expand only when requested.
 - Each stage has a **1–2 sentence summary** that stands alone.
@@ -58,9 +66,9 @@ flowchart LR
 
 ---
 
-## Flow content: How TeachTracker Works in Practice
+## Flow content: How TeachTracker Works in Practice (Slides)
 
-### Stage 1: Context (Sarah)
+### Slide 1: Context (Sarah)
 
 **Summary:** Sarah manages 28 students across two campuses. She needs one place to run IEP work.
 
@@ -84,7 +92,7 @@ Before TeachTracker, her workflow lived across spreadsheets, shared drives, emai
 
 ---
 
-### Stage 2: Structured IEP Creation
+### Slide 2: Structured IEP Creation
 
 **Summary:** TeachTracker structures the IEP as she types. It flags gaps before they become risk.
 
@@ -102,7 +110,7 @@ Instead of guessing, she sees a live compliance status indicator.
 
 ---
 
-### Stage 3: Automated Safeguards & Deadlines
+### Slide 3: Automated Safeguards & Deadlines
 
 **Summary:** Deadlines are monitored in the background. Sarah gets proactive alerts, not surprises.
 
@@ -123,7 +131,7 @@ District leaders see a dashboard-level compliance health score across campuses.
 
 ---
 
-### Stage 4: Unified Collaboration
+### Slide 4: Unified Collaboration
 
 **Summary:** Teachers and parents work from one source of truth. Communication stays aligned.
 
@@ -147,7 +155,7 @@ Everyone works from the same source of truth.
 
 ---
 
-### Stage 5: District-Level Intelligence
+### Slide 5: District-Level Intelligence
 
 **Summary:** Leaders see risk early across campuses. Audit prep becomes a dashboard view, not a scramble.
 
@@ -168,7 +176,7 @@ What used to require weeks of manual preparation becomes available in seconds.
 
 ---
 
-### Stage 6: The Result
+### Slide 6: The Result
 
 **Summary:** Paperwork drops. Oversight improves. Transparency increases. Compliance becomes proactive.
 

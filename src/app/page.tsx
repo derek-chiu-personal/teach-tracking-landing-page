@@ -3,7 +3,6 @@
 import { useState } from 'react';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
-import SystemOverview from '@/components/SystemOverview';
 import LeadForm from '@/components/LeadForm';
 import CalendarWidget from '@/components/CalendarWidget';
 import { AnimatePresence, motion } from 'framer-motion';
@@ -26,8 +25,43 @@ export default function Home() {
       <Navbar />
       <Hero />
 
-      {/* System Overview — How TeachTracker Works in Practice (flow pattern; no video) */}
-      <SystemOverview />
+      {/* How It Works teaser (slim) */}
+      <section className="py-16 bg-white">
+        <div className="max-w-5xl mx-auto px-6 grid gap-10 md:grid-cols-[1.4fr,1fr] items-center">
+          <div>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              How TeachTracker Works in Practice
+            </h2>
+            <p className="text-gray-600 mb-4">
+              Follow a short, step-by-step story of how a case manager like Sarah moves from scattered spreadsheets to proactive, district-wide compliance.
+            </p>
+            <p className="text-gray-500 mb-6">
+              We keep the landing page focused. The full walkthrough lives on a dedicated page so busy leaders can go as deep as they need.
+            </p>
+            <a
+              href="/how-it-works"
+              className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-blue-600 hover:bg-blue-700 text-white font-semibold shadow-sm transition-colors"
+            >
+              See the full walkthrough
+            </a>
+          </div>
+          <div className="hidden md:block">
+            <div className="rounded-2xl border border-gray-200 bg-gray-50 p-5 text-sm text-gray-700">
+              <p className="font-semibold text-gray-900 mb-2">
+                6-slide deep dive
+              </p>
+              <ul className="list-disc list-inside space-y-1">
+                <li>Context: Sarah&apos;s day-to-day reality</li>
+                <li>Structured IEP creation in real time</li>
+                <li>Automated safeguards and deadlines</li>
+                <li>Unified collaboration with teachers and parents</li>
+                <li>District-level intelligence for leaders</li>
+                <li>The result: proactive compliance</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Features Section */}
       <section id="features" className="py-24 bg-white">
