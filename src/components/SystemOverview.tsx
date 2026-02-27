@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { User, FileCheck, CalendarClock, Users, BarChart3, CheckCircle, ChevronDown } from 'lucide-react';
 
@@ -36,6 +37,15 @@ function FlowConnector() {
 }
 
 export default function SystemOverview() {
+  const [activeStage, setActiveStage] = useState<(typeof FLOW_STAGES)[number]['id']>('context');
+
+  const handleStageClick = (id: (typeof FLOW_STAGES)[number]['id']) => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   return (
     <section id="system-overview" className="py-24 bg-white" aria-label="How TeachTracker works in practice — flow">
       <div className="max-w-4xl mx-auto px-6">
@@ -53,29 +63,43 @@ export default function SystemOverview() {
             See how a typical case manager uses TeachTracker every day.
           </p>
 
-          {/* Flow stages strip — visible sequence */}
+          {/* Flow stages strip — visible sequence + jump-to-stage */}
           <div className="flex flex-wrap items-center justify-center gap-1 sm:gap-2 text-sm">
-            {FLOW_STAGES.map((stage, i) => (
-              <span key={stage.id} className="flex items-center gap-1 sm:gap-2">
-                <span className="px-2.5 py-1 rounded-md bg-gray-100 text-gray-700 font-medium border border-gray-200">
-                  {i + 1}. {stage.label}
-                </span>
-                {i < FLOW_STAGES.length - 1 && (
-                  <span className="text-gray-400 hidden sm:inline" aria-hidden>
-                    →
+            {FLOW_STAGES.map((stage, i) => {
+              const isActive = activeStage === stage.id;
+              return (
+                <button
+                  key={stage.id}
+                  type="button"
+                  onClick={() => handleStageClick(stage.id)}
+                  className={`flex items-center gap-1 sm:gap-2 px-2.5 py-1 rounded-md border transition-colors ${
+                    isActive
+                      ? 'bg-blue-600 text-white border-blue-600'
+                      : 'bg-gray-100 text-gray-700 border-gray-200 hover:bg-gray-200'
+                  }`}
+                >
+                  <span className="font-medium">
+                    {i + 1}. {stage.label}
                   </span>
-                )}
-              </span>
-            ))}
+                  {i < FLOW_STAGES.length - 1 && (
+                    <span className="text-gray-200 hidden sm:inline" aria-hidden>
+                      →
+                    </span>
+                  )}
+                </button>
+              );
+            })}
           </div>
         </motion.div>
 
         {/* Flow: Context (Sarah) */}
         <motion.div
+          id="context"
           variants={container}
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: '-50px' }}
+          onViewportEnter={() => setActiveStage('context')}
           className="flow-stage"
         >
           <div className="flex items-center gap-2 mb-4">
@@ -125,6 +149,8 @@ export default function SystemOverview() {
 
         {/* Flow: Step 1 */}
         <FlowStepCard
+          stageId="step1"
+          setActiveStage={setActiveStage}
           flowStep={2}
           title="Structured IEP Creation"
           icon={<FileCheck className="w-6 h-6 text-blue-600" />}
@@ -146,6 +172,8 @@ export default function SystemOverview() {
 
         {/* Flow: Step 2 */}
         <FlowStepCard
+          stageId="step2"
+          setActiveStage={setActiveStage}
           flowStep={3}
           title="Automated Safeguards & Deadlines"
           icon={<CalendarClock className="w-6 h-6 text-indigo-600" />}
@@ -169,6 +197,8 @@ export default function SystemOverview() {
 
         {/* Flow: Step 3 */}
         <FlowStepCard
+          stageId="step3"
+          setActiveStage={setActiveStage}
           flowStep={4}
           title="Unified Collaboration"
           icon={<Users className="w-6 h-6 text-purple-600" />}
@@ -192,6 +222,8 @@ export default function SystemOverview() {
 
         {/* Flow: Step 4 */}
         <FlowStepCard
+          stageId="step4"
+          setActiveStage={setActiveStage}
           flowStep={5}
           title="District-Level Intelligence"
           icon={<BarChart3 className="w-6 h-6 text-emerald-600" />}
@@ -210,9 +242,11 @@ export default function SystemOverview() {
 
         {/* Flow: The Result */}
         <motion.div
+          id="result"
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-50px' }}
+          onViewportEnter={() => setActiveStage('result')}
           className="flow-stage"
         >
           <div className="flex items-center gap-2 mb-4">
@@ -267,6 +301,8 @@ const accentClasses: Record<Accent, { bg: string; border: string }> = {
 };
 
 function FlowStepCard({
+  stageId,
+  setActiveStage,
   flowStep,
   title,
   icon,
@@ -277,6 +313,8 @@ function FlowStepCard({
   tail,
   accent,
 }: {
+  stageId: (typeof FLOW_STAGES)[number]['id'];
+  setActiveStage: (id: (typeof FLOW_STAGES)[number]['id']) => void;
   flowStep: number;
   title: string;
   icon: React.ReactNode;
@@ -290,9 +328,11 @@ function FlowStepCard({
   const classes = accentClasses[accent];
   return (
     <motion.div
+      id={stageId}
       initial={{ opacity: 0, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-30px' }}
+      onViewportEnter={() => setActiveStage(stageId)}
       className="flow-stage"
     >
       <div className="flex items-center gap-2 mb-4">

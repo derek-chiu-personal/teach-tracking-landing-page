@@ -49,7 +49,24 @@ flowchart LR
 - The current stage should be **visually indicated** during scroll or slide progression.
 - The global header (logo + nav) must always allow users to return to the main landing page from any route.
 - From the deep-dive page, clicking **Features**, **Testimonials**, or **Get a Demo** should navigate to the main landing page and land on the corresponding section.
-- The Hero section on the main landing page must not include extra \"How it works\" or \"Learn more\" buttons that duplicate the dedicated \"See the full walkthrough\" CTA in the teaser section.
+- The Hero section on the main landing page must not include extra "How it works" or "Learn more" buttons that duplicate the dedicated "See the full walkthrough" CTA in the teaser section.
+
+### Landing Page Teaser: Visual, "Show, Don’t Tell"
+
+- The main landing page should feel **visual and product-first**, similar in spirit to the concise, screenshot-led bands on the [Atlassian homepage](https://www.atlassian.com/), where images and UI mockups do most of the storytelling.
+- Immediately below the Hero, the System Overview teaser must use a **screenshots + short descriptions** pattern; the images are the **primary feature**, and the copy is there to label what is on screen, not to explain everything.
+- Each teaser card should:
+  - Show a **realistic product view** (e.g., compliance dashboard, deadline alerts, meeting scheduler, journey timeline).
+  - Include a **short title** and **1–2 short sentences** of copy.
+- The teaser must **show what TeachTracker does** (screens, states, alerts) more than it “talks at” the lead; avoid long marketing paragraphs.
+- Landing-page copy should be **tighter than the deep-dive**:
+  - Hero mission statement: one sentence.
+  - Teaser intro: at most one brief sentence.
+  - All additional explanation about the flow should live on the `/how-it-works` deep-dive page.
+ - For the first version, use these assets in the teaser:
+   - `src/img/teacher-dashboard.png` — high-level view of a case manager dashboard and compliance status.
+   - `src/img/teacher-iep.png` — detailed IEP editing view to illustrate structured creation.
+   - `src/img/teacher-accommodations.png` — accommodations/implementation view to illustrate collaboration.
 
 ### Acceptance Criteria
 
