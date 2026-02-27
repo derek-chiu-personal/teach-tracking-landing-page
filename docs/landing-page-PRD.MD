@@ -28,7 +28,7 @@ The objective is to create a high-authority entry point for school district deci
   ↓
 **The Hook:** Hero section with Mission Statement (Emotional Resonance)
   ↓
-**The Proof:** Integrated Video Demo (2-3 Minutes)
+**The Proof:** System Overview — "How TeachTracker Works in Practice" (replaces vision demo; see `docs/system-overview-user-story.MD`)
   ↓
 **The Action:** Integrated Scheduler (Cal.com/Calendly)
   ↓
@@ -46,11 +46,11 @@ The objective is to create a high-authority entry point for school district deci
 ### 4.2 Hero Section (Mission-Centric)
 * **Headline:** "Intelligent IEP Management for Modern School Districts."
 * **Sub-headline:** "Deliver compliant, collaborative, and data-driven student plans at scale — empowering educators and parents with clarity and confidence."
-* **Primary CTA:** "Watch the 2-Minute Vision Demo" (Scrolls to video).
+* **Primary CTA:** "See How It Works" (Scrolls to System Overview section).
 
-### 4.3 Interactive Video Module
-* **Custom Player:** A refined wrapper (Mux/Cloudinary) to avoid "cheap" YouTube/Vimeo branding.
-* **Overlay CTA:** A non-intrusive "Schedule Full Demo" button that appears 60 seconds into the video.
+### 4.3 System Overview (replaces Vision Demo)
+* **Content:** "How TeachTracker Works in Practice" — Sarah persona, four steps (Structured IEP Creation, Automated Safeguards & Deadlines, Unified Collaboration, District-Level Intelligence). Source: `docs/system-overview-user-story.MD`.
+* **Optional:** Video module may be retained or removed; overlay CTA (e.g. "Schedule Full Demo") can be tied to this section instead.
 
 ### 4.4 Lead Capture & Scheduling
 * **Two-Step Flow:**
@@ -75,7 +75,7 @@ The objective is to create a high-authority entry point for school district deci
 
 1.  **Hero:** The Mission & Vision.
 2.  **The Crisis:** Brief data-viz section on "The Cost of Outdated IEP Processes."
-3.  **The Solution (The Video):** Center-stage "Intelligent Management" demo.
+3.  **The Solution (System Overview):** "How TeachTracker Works in Practice" (replaces video demo).
 4.  **Core Pillars:**
     * *Compliance:* Automated guardrails.
     * *Collaboration:* Parent-teacher-admin synced views.
@@ -85,6 +85,6 @@ The objective is to create a high-authority entry point for school district deci
 ---
 
 ## 7. Success Metrics (KPIs)
-* **Video Completion Rate:** % of users who watch at least 75% of the demo video.
+* **Engagement:** % of users who scroll to / complete the System Overview section (or video completion if video retained).
 * **Lead Quality:** % of signups from valid school district domains (.gov, .edu, .org).
 * **SEO Visibility:** Tracking ranking for "Intelligent IEP Software."

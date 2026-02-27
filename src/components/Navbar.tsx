@@ -8,6 +8,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
+    { name: 'How It Works', href: '#system-overview' },
     { name: 'Demo', href: `https://app.${typeof window !== 'undefined' ? window.location.hostname : 'teachtracker.com'}` },
     { name: 'Features', href: '#features' },
     { name: 'Testimonials', href: '#testimonials' },

@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
-import VideoPlayer from '@/components/VideoPlayer';
+import SystemOverview from '@/components/SystemOverview';
 import LeadForm from '@/components/LeadForm';
 import CalendarWidget from '@/components/CalendarWidget';
 import { AnimatePresence, motion } from 'framer-motion';
@@ -25,19 +25,9 @@ export default function Home() {
     <main>
       <Navbar />
       <Hero />
-      
-      {/* Video Section */}
-      <section id="video-section" className="py-12 bg-gray-50">
-        <div className="max-w-5xl mx-auto px-6 text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
-            Watch the Vision Demo
-          </h2>
-          <p className="text-gray-600 mb-8">
-            See how teachtracker transforms special education workflows.
-          </p>
-          <VideoPlayer />
-        </div>
-      </section>
+
+      {/* System Overview — How TeachTracker Works in Practice (flow pattern; no video) */}
+      <SystemOverview />
 
       {/* Features Section */}
       <section id="features" className="py-24 bg-white">

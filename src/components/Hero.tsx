@@ -8,10 +8,10 @@ interface HeroProps {
 }
 
 export default function Hero({ onWatchDemo }: HeroProps) {
-  const scrollToVideo = () => {
-    const videoSection = document.getElementById('video-section');
-    if (videoSection) {
-      videoSection.scrollIntoView({ behavior: 'smooth' });
+  const scrollToSystemOverview = () => {
+    const section = document.getElementById('system-overview');
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
     } else if (onWatchDemo) {
       onWatchDemo();
     }
@@ -81,11 +81,11 @@ export default function Hero({ onWatchDemo }: HeroProps) {
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <button
-            onClick={scrollToVideo}
+            onClick={scrollToSystemOverview}
             className="inline-flex items-center gap-3 px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white text-lg font-semibold rounded-full transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5 cursor-pointer"
           >
             <Play className="w-5 h-5 fill-current" />
-            Watch the 2-Minute Vision Demo
+            See How It Works
           </button>
 
           <a
